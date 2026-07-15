@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#FF8B5CF6</color>
+    <color name="accent_light">#FFA78BFA</color>
+    <color name="background_dark">#FF0A0E27</color>
+    <color name="black">#FF000000</color>
+    <color name="card_dark">#FF1E2246</color>
+    <color name="card_dark_elevated">#FF252A50</color>
+    <color name="divider">#1AFFFFFF</color>
+    <color name="error">#FFEF4444</color>
+    <color name="error_dark">#FFDC2626</color>
+    <color name="fab_bg">#FF6366F1</color>
+    <color name="fab_pressed">#FF4F46E5</color>
+    <color name="glass_bg">#331E2246</color>
+    <color name="glass_bg_active">#2210B981</color>
+    <color name="glass_border">#336366F1</color>
+    <color name="glass_border_active">#4410B981</color>
+    <color name="gradient_center">#FF7C3AED</color>
+    <color name="gradient_end">#FF06B6D4</color>
+    <color name="gradient_start">#FF4F46E5</color>
+    <color name="navigation_bar">#FF0A0E27</color>
+    <color name="primary">#FF6366F1</color>
+    <color name="primary_container">#FF312E81</color>
+    <color name="primary_dark">#FF4F46E5</color>
+    <color name="primary_light">#FF818CF8</color>
+    <color name="ripple_color">#226366F1</color>
+    <color name="secondary">#FF06B6D4</color>
+    <color name="secondary_container">#FF164E63</color>
+    <color name="secondary_dark">#FF0891B2</color>
+    <color name="shield_active">#FF10B981</color>
+    <color name="shield_glow_active">#4410B981</color>
+    <color name="shield_glow_inactive">#44EF4444</color>
+    <color name="shield_inactive">#FF64748B</color>
+    <color name="status_bar">#FF070A1F</color>
+    <color name="success">#FF10B981</color>
+    <color name="success_dark">#FF059669</color>
+    <color name="surface_dark">#FF151932</color>
+    <color name="text_hint">#FF64748B</color>
+    <color name="text_on_primary">#FFFFFFFF</color>
+    <color name="text_primary">#FFE2E8F0</color>
+    <color name="text_secondary">#FF94A3B8</color>
+    <color name="transparent">#00000000</color>
+    <color name="warning">#FFF59E0B</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="access_denied">Access Denied</string>
+    <string name="accessibility_description">Site Blocker monitors browser URLs to block unauthorized websites. Only whitelisted sites are allowed to load.</string>
+    <string name="accessibility_subtitle">Monitor browser URLs to block sites</string>
+    <string name="accessibility_title">Accessibility Service</string>
+    <string name="add_button">Add</string>
+    <string name="add_site_title">Add Allowed Site</string>
+    <string name="allowed_label">Allowed</string>
+    <string name="allowed_sites_title">Allowed Sites</string>
+    <string name="app_name">Site Blocker</string>
+    <string name="app_protection_title">App Protection</string>
+    <string name="blocked_domain_label">Blocked Domain:</string>
+    <string name="blocked_label">Blocked</string>
+    <string name="blocked_message">This website is not in your allowed list.\nGo back or add it to allowed sites.</string>
+    <string name="browser_blocking_subtitle">Block non-whitelisted sites in Firefox</string>
+    <string name="browser_blocking_title">Browser Protection</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="cd_add_site">Add a new allowed site</string>
+    <string name="cd_delete_site">Remove site from allowed list</string>
+    <string name="cd_shield_icon">Protection shield</string>
+    <string name="cd_toggle_permission">Toggle permission</string>
+    <string name="device_admin_description">Site Blocker uses Device Admin to prevent unauthorized uninstallation of the app.</string>
+    <string name="device_admin_subtitle">Prevent app uninstallation</string>
+    <string name="device_admin_title">Device Admin</string>
+    <string name="domain_exists">This domain is already in the list</string>
+    <string name="domain_hint">Enter domain (e.g., google.com)</string>
+    <string name="enable_accessibility_prompt">Please enable Accessibility Service in Settings to start blocking</string>
+    <string name="enable_admin_prompt">Please enable Device Admin to prevent app uninstallation</string>
+    <string name="go_back_button">Go Back</string>
+    <string name="invalid_domain">Please enter a valid domain</string>
+    <string name="label_hint">Display name (optional)</string>
+    <string name="multi_run_subtitle">Block adding new apps in Multi Run</string>
+    <string name="multi_run_title">Multi Run Protection</string>
+    <string name="no_sites_message">No allowed sites yet.\nTap + to add your first site.</string>
+    <string name="notification_channel_desc">Shows the current protection status</string>
+    <string name="notification_channel_name">Site Blocker Status</string>
+    <string name="notification_text">Monitoring browsers for blocked sites</string>
+    <string name="notification_title">Site Blocker Active</string>
+    <string name="open_app_button">Open Site Blocker</string>
+    <string name="permissions_title">Permissions</string>
+    <string name="protection_active">Protection Active</string>
+    <string name="protection_inactive">Protection Inactive</string>
+    <string name="site_added">Site added successfully</string>
+    <string name="site_removed">Site removed</string>
+    <string name="sites_label">Sites</string>
+    <string name="subtitle_active">All non-whitelisted sites are blocked</string>
+    <string name="subtitle_browser_disabled">Enable Browser Protection to start blocking</string>
+    <string name="subtitle_inactive">Enable Accessibility to start blocking</string>
+    <style name="BodyText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+    <style name="DialogButton" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/primary_light</item>
+    </style>
+    <style name="GlassCard">
+        <item name="android:background">@drawable/bg_glass_card</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    <style name="SectionHeader">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+    <style name="StatLabel">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+    <style name="StatNumber">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">sans-serif-bold</item>
+    </style>
+    <style name="SubtitleText">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="Theme.SiteBlocker" parent="Theme.Material3.Dark.NoActionBar">
+        
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+
+        
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+
+        
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorSurfaceVariant">@color/card_dark</item>
+
+        
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:navigationBarColor">@color/navigation_bar</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+
+        
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorError">@color/error</item>
+
+        
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+    <style name="Theme.SiteBlocker.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:background">@color/card_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogButton</item>
+    </style>
+    <style name="TitleText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg_gradient"
+    android:padding="32dp">
+
+    <!-- Blocked Icon -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_blocked"
+        android:contentDescription="@string/access_denied"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Access Denied Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/access_denied"
+        android:textColor="@color/error"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-bold"
+        android:letterSpacing="0.02"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Blocked Domain -->
+    <TextView
+        android:id="@+id/blockedDomainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_secondary"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/bg_stat_card"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Message -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/blocked_message"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Go Back Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/goBackButton"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:text="@string/go_back_button"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="@color/primary"
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.Material3.Button" />
+
+    <!-- Open App Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/openAppButton"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:text="@string/open_app_button"
+        android:textColor="@color/primary_light"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-medium"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:strokeColor="@color/primary_light" />
+
+</LinearLayout>

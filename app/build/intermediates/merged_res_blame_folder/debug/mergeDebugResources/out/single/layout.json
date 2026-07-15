@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-mergeDebugResources-35:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.siteblocker.app-mergeDebugResources-35:/layout/activity_main.xml",
+        "source": "com.siteblocker.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-mergeDebugResources-35:\\layout\\activity_blocked.xml",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\activity_blocked.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-mergeDebugResources-35:\\layout\\dialog_add_site.xml",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\dialog_add_site.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-mergeDebugResources-35:\\layout\\item_site.xml",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\item_site.xml"
+    }
+]

@@ -1,0 +1,226 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.siteblocker.app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="35" />
+10
+11    <!-- Permissions -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:6:5-67
+12-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+13-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:7:5-81
+13-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:7:22-78
+14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+14-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:8:5-77
+14-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:8:22-74
+15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+15-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:9:5-77
+15-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:9:22-74
+16    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+16-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:10:5-11:53
+16-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:10:22-74
+17
+18    <permission
+18-->[androidx.core:core:1.13.1] C:\Users\saifl\.gradle\caches\transforms-4\10cee5879b18c42f1dc4e342ba45bf06\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+19        android:name="com.siteblocker.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+19-->[androidx.core:core:1.13.1] C:\Users\saifl\.gradle\caches\transforms-4\10cee5879b18c42f1dc4e342ba45bf06\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+20        android:protectionLevel="signature" />
+20-->[androidx.core:core:1.13.1] C:\Users\saifl\.gradle\caches\transforms-4\10cee5879b18c42f1dc4e342ba45bf06\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+21
+22    <uses-permission android:name="com.siteblocker.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+22-->[androidx.core:core:1.13.1] C:\Users\saifl\.gradle\caches\transforms-4\10cee5879b18c42f1dc4e342ba45bf06\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+22-->[androidx.core:core:1.13.1] C:\Users\saifl\.gradle\caches\transforms-4\10cee5879b18c42f1dc4e342ba45bf06\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+23
+24    <application
+24-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:13:5-71:19
+25        android:name="com.siteblocker.app.SiteBlockerApp"
+25-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:14:9-39
+26        android:allowBackup="false"
+26-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:15:9-36
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.13.1] C:\Users\saifl\.gradle\caches\transforms-4\10cee5879b18c42f1dc4e342ba45bf06\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+28        android:debuggable="true"
+29        android:extractNativeLibs="false"
+30        android:icon="@mipmap/ic_launcher"
+30-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:16:9-43
+31        android:label="@string/app_name"
+31-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:18:9-41
+32        android:networkSecurityConfig="@xml/network_security_config"
+32-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:21:9-69
+33        android:roundIcon="@mipmap/ic_launcher_round"
+33-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:17:9-54
+34        android:supportsRtl="true"
+34-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:19:9-35
+35        android:theme="@style/Theme.SiteBlocker" >
+35-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:20:9-49
+36
+37        <!-- Main Activity -->
+38        <activity
+38-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:25:9-33:20
+39            android:name="com.siteblocker.app.MainActivity"
+39-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:26:13-41
+40            android:exported="true"
+40-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:27:13-36
+41            android:theme="@style/Theme.SiteBlocker" >
+41-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:28:13-53
+42            <intent-filter>
+42-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:29:13-32:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:30:17-69
+43-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:30:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:31:17-77
+45-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:31:27-74
+46            </intent-filter>
+47        </activity>
+48
+49        <!-- Blocked Site Screen -->
+50        <activity
+50-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:36:9-42:49
+51            android:name="com.siteblocker.app.BlockedActivity"
+51-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:37:13-44
+52            android:excludeFromRecents="true"
+52-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:42:13-46
+53            android:exported="false"
+53-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:38:13-37
+54            android:launchMode="singleTop"
+54-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:40:13-43
+55            android:taskAffinity=""
+55-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:41:13-36
+56            android:theme="@style/Theme.SiteBlocker" />
+56-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:39:13-53
+57
+58        <!-- Accessibility Service for Browser Monitoring -->
+59        <service
+59-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:45:9-55:19
+60            android:name="com.siteblocker.app.accessibility.BrowserMonitorService"
+60-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:46:13-64
+61            android:exported="false"
+61-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:47:13-37
+62            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+62-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:48:13-79
+63            <intent-filter>
+63-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:49:13-51:29
+64                <action android:name="android.accessibilityservice.AccessibilityService" />
+64-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:50:17-92
+64-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:50:25-89
+65            </intent-filter>
+66
+67            <meta-data
+67-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:52:13-54:64
+68                android:name="android.accessibilityservice"
+68-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:53:17-60
+69                android:resource="@xml/accessibility_config" />
+69-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:54:17-61
+70        </service>
+71
+72        <!-- Device Admin Receiver -->
+73        <receiver
+73-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:58:9-69:20
+74            android:name="com.siteblocker.app.admin.SiteBlockerDeviceAdmin"
+74-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:59:13-57
+75            android:exported="true"
+75-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:60:13-36
+76            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+76-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:61:13-70
+77            <meta-data
+77-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:62:13-64:65
+78                android:name="android.app.device_admin"
+78-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:63:17-56
+79                android:resource="@xml/device_admin_policies" />
+79-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:64:17-62
+80
+81            <intent-filter>
+81-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:65:13-68:29
+82                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+82-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:66:17-82
+82-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:66:25-79
+83                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+83-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:67:17-83
+83-->E:\My Projects\6. Site-Blocker\Site-Blocker\app\src\main\AndroidManifest.xml:67:25-80
+84            </intent-filter>
+85        </receiver>
+86
+87        <provider
+87-->[androidx.emoji2:emoji2:1.3.0] C:\Users\saifl\.gradle\caches\transforms-4\3b85377256684b33a58a373b37674409\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+88            android:name="androidx.startup.InitializationProvider"
+88-->[androidx.emoji2:emoji2:1.3.0] C:\Users\saifl\.gradle\caches\transforms-4\3b85377256684b33a58a373b37674409\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+89            android:authorities="com.siteblocker.app.androidx-startup"
+89-->[androidx.emoji2:emoji2:1.3.0] C:\Users\saifl\.gradle\caches\transforms-4\3b85377256684b33a58a373b37674409\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+90            android:exported="false" >
+90-->[androidx.emoji2:emoji2:1.3.0] C:\Users\saifl\.gradle\caches\transforms-4\3b85377256684b33a58a373b37674409\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+91            <meta-data
+91-->[androidx.emoji2:emoji2:1.3.0] C:\Users\saifl\.gradle\caches\transforms-4\3b85377256684b33a58a373b37674409\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+92-->[androidx.emoji2:emoji2:1.3.0] C:\Users\saifl\.gradle\caches\transforms-4\3b85377256684b33a58a373b37674409\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+93                android:value="androidx.startup" />
+93-->[androidx.emoji2:emoji2:1.3.0] C:\Users\saifl\.gradle\caches\transforms-4\3b85377256684b33a58a373b37674409\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+94            <meta-data
+94-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\saifl\.gradle\caches\transforms-4\dc4c573133fff00d15253b2f330a0587\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+95-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\saifl\.gradle\caches\transforms-4\dc4c573133fff00d15253b2f330a0587\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:30:17-78
+96                android:value="androidx.startup" />
+96-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\saifl\.gradle\caches\transforms-4\dc4c573133fff00d15253b2f330a0587\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+99                android:value="androidx.startup" />
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+100        </provider>
+101
+102        <service
+102-->[androidx.room:room-runtime:2.6.1] C:\Users\saifl\.gradle\caches\transforms-4\2c1e81c4ef7a2b8c33163587f15179c7\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+103            android:name="androidx.room.MultiInstanceInvalidationService"
+103-->[androidx.room:room-runtime:2.6.1] C:\Users\saifl\.gradle\caches\transforms-4\2c1e81c4ef7a2b8c33163587f15179c7\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+104            android:directBootAware="true"
+104-->[androidx.room:room-runtime:2.6.1] C:\Users\saifl\.gradle\caches\transforms-4\2c1e81c4ef7a2b8c33163587f15179c7\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+105            android:exported="false" />
+105-->[androidx.room:room-runtime:2.6.1] C:\Users\saifl\.gradle\caches\transforms-4\2c1e81c4ef7a2b8c33163587f15179c7\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+106
+107        <receiver
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+108            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+109            android:directBootAware="false"
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+110            android:enabled="true"
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+111            android:exported="true"
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+112            android:permission="android.permission.DUMP" >
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+113            <intent-filter>
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+114                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+115            </intent-filter>
+116            <intent-filter>
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+117                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+118            </intent-filter>
+119            <intent-filter>
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+120                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+121            </intent-filter>
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+123                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\saifl\.gradle\caches\transforms-4\e1c4cffcb44a651b13fe2cdd3f11f745\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+124            </intent-filter>
+125        </receiver>
+126    </application>
+127
+128</manifest>

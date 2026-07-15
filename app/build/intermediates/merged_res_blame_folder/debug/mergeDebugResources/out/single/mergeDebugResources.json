@@ -1,0 +1,122 @@
+[
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_input.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_input.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\layout_dialog_add_site.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\dialog_add_site.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.siteblocker.app-debug-36:/layout_activity_main.xml.flat",
+        "source": "com.siteblocker.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_stat_card.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_stat_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\anim_fade_in_up.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\anim\\fade_in_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_web.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_web.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_delete.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_glass_card.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_glass_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\layout_activity_blocked.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\activity_blocked.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_site_item.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_site_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\xml_accessibility_config.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\xml\\accessibility_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_admin_lock.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_admin_lock.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_glass_card_active.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_glass_card_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_gradient.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_status_chip.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_status_chip.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_shield_glow.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_shield_glow.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\layout_item_site.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\item_site.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_fab.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_fab.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\xml_device_admin_policies.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\xml\\device_admin_policies.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_blocked.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_blocked.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_bg_status_chip_active.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\bg_status_chip_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\anim_pulse.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\anim\\pulse.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_shield.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_shield.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_accessibility_shield.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_accessibility_shield.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-debug-36:\\drawable_ic_app_block.xml.flat",
+        "source": "C:\\Users\\saifl\\.gradle\\daemon\\8.7\\com.siteblocker.app-main-38:\\drawable\\ic_app_block.xml"
+    }
+]

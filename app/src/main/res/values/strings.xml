@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Site Blocker</string>
+
+    <!-- Accessibility Service -->
+    <string name="accessibility_description">Site Blocker monitors browser URLs to block unauthorized websites. Only whitelisted sites are allowed to load.</string>
+
+    <!-- Device Admin -->
+    <string name="device_admin_description">Site Blocker uses Device Admin to prevent unauthorized uninstallation of the app.</string>
+
+    <!-- Home Screen -->
+    <string name="protection_active">Protection Active</string>
+    <string name="protection_inactive">Protection Inactive</string>
+    <string name="subtitle_active">All non-whitelisted sites are blocked</string>
+    <string name="subtitle_inactive">Enable Accessibility to start blocking</string>
+
+    <!-- Stats -->
+    <string name="blocked_label">Blocked</string>
+    <string name="allowed_label">Allowed</string>
+    <string name="sites_label">Sites</string>
+
+    <!-- Permissions Section -->
+    <string name="permissions_title">Permissions</string>
+    <string name="accessibility_title">Accessibility Service</string>
+    <string name="accessibility_subtitle">Monitor browser URLs to block sites</string>
+    <string name="device_admin_title">Device Admin</string>
+    <string name="device_admin_subtitle">Prevent app uninstallation</string>
+
+    <!-- Allowed Sites Section -->
+    <string name="allowed_sites_title">Allowed Sites</string>
+    <string name="add_site_title">Add Allowed Site</string>
+    <string name="domain_hint">Enter domain (e.g., google.com)</string>
+    <string name="label_hint">Display name (optional)</string>
+    <string name="add_button">Add</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="no_sites_message">No allowed sites yet.\nTap + to add your first site.</string>
+
+    <!-- Blocked Screen -->
+    <string name="access_denied">Access Denied</string>
+    <string name="blocked_message">This website is not in your allowed list.\nGo back or add it to allowed sites.</string>
+    <string name="go_back_button">Go Back</string>
+    <string name="open_app_button">Open Site Blocker</string>
+    <string name="blocked_domain_label">Blocked Domain:</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Site Blocker Status</string>
+    <string name="notification_channel_desc">Shows the current protection status</string>
+    <string name="notification_title">Site Blocker Active</string>
+    <string name="notification_text">Monitoring browsers for blocked sites</string>
+
+    <!-- Toasts & Messages -->
+    <string name="invalid_domain">Please enter a valid domain</string>
+    <string name="domain_exists">This domain is already in the list</string>
+    <string name="site_added">Site added successfully</string>
+    <string name="site_removed">Site removed</string>
+    <string name="enable_accessibility_prompt">Please enable Accessibility Service in Settings to start blocking</string>
+    <string name="enable_admin_prompt">Please enable Device Admin to prevent app uninstallation</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_shield_icon">Protection shield</string>
+    <string name="cd_add_site">Add a new allowed site</string>
+    <string name="cd_delete_site">Remove site from allowed list</string>
+    <string name="cd_toggle_permission">Toggle permission</string>
+
+    <!-- App Protection Section -->
+    <string name="app_protection_title">App Protection</string>
+    <string name="multi_run_title">Multi Run Protection</string>
+    <string name="multi_run_subtitle">Block adding new apps in Multi Run</string>
+    <string name="browser_blocking_title">Browser Protection</string>
+    <string name="browser_blocking_subtitle">Block non-whitelisted sites in Firefox</string>
+    <string name="subtitle_browser_disabled">Enable Browser Protection to start blocking</string>
+</resources>
