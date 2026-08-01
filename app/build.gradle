@@ -22,8 +22,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -43,8 +43,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            def buildTypeName = variant.buildType.name
-            outputFileName = "Site-Blocker-${buildTypeName}.apk"
+            outputFileName = "Site-Blocker.apk"
         }
     }
 }
