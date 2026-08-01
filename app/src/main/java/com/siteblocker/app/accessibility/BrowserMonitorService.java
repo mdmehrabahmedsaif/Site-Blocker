@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,9 +14,11 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.siteblocker.app.BlockedActivity;
+import com.siteblocker.app.data.SiteRepository;
 import com.siteblocker.app.util.Constants;
 import com.siteblocker.app.util.DomainMatcher;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.Collections;
@@ -42,10 +45,13 @@ public class BrowserMonitorService extends AccessibilityService {
     // Hardcoded whitelist from Constants
     private final List<String> allowedDomains = Constants.ALLOWED_DOMAINS;
 
+    // User-added whitelist from database (cached)
+    private volatile List<String> cachedDbAllowedDomains = Collections.emptyList();
+
     // Prevent rapid-fire blocking
     private long lastBlockTime = 0;
     private String lastBlockedDomain = "";
-    private static final long BLOCK_COOLDOWN_MS = 50; // 50ms cooldown for instant block action
+    private static final long BLOCK_COOLDOWN_MS = 0; // 0ms cooldown for instant block action before page loads
 
     // Flag to prevent re-entrant blocking
     private final AtomicBoolean isBlocking = new AtomicBoolean(false);
@@ -67,6 +73,9 @@ public class BrowserMonitorService extends AccessibilityService {
         Log.i(TAG, "BrowserMonitorService connected");
 
         mainHandler = new Handler(Looper.getMainLooper());
+
+        // Load user-added allowed domains from database in background
+        refreshDbAllowedDomains();
 
         // Configure service
         AccessibilityServiceInfo info = getServiceInfo();
@@ -93,17 +102,29 @@ public class BrowserMonitorService extends AccessibilityService {
 
         if (packageName == null) return;
 
+        // === IGNORE WHATSAPP COMPLETELY ===
+        // Prevent AccessibilityService actions from ever affecting WhatsApp
+        if ("com.whatsapp".equals(packageName)
+                || "com.whatsapp.w4b".equals(packageName)
+                || "com.whatsapp.app".equals(packageName)) {
+            return;
+        }
+
         int eventType = event.getEventType();
         Log.d(TAG, "Event: pkg=" + packageName + " type=" + eventType);
 
-        // === TRANSITION BACK FROM BLOCK SCREEN CHECK ===
+        // === TRANSITION: BlockedActivity -> Firefox ===
+        // When user returns from our block screen to Firefox, press BACK once to close the blocked tab.
+        // This takes Firefox to its home page. Only affects Firefox, never WhatsApp.
         if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
-            if (Constants.MONITORED_BROWSERS.containsKey(packageName)
+            if ("org.mozilla.firefox".equals(packageName)
                     && "com.siteblocker.app".equals(lastActivePackage)) {
-                Log.d(TAG, "Transition back from block screen detected, going back");
+                Log.d(TAG, "Returning from BlockedActivity to Firefox, pressing BACK to close blocked tab");
                 performGlobalAction(GLOBAL_ACTION_BACK);
             }
-            lastActivePackage = packageName;
+            if ("org.mozilla.firefox".equals(packageName) || "com.siteblocker.app".equals(packageName)) {
+                lastActivePackage = packageName;
+            }
         }
 
         // === MULTI RUN APP BLOCKING ===
@@ -121,15 +142,22 @@ public class BrowserMonitorService extends AccessibilityService {
             return;
         }
 
-        if (!isBrowserBlockingEnabled()) {
-            return;
+        // === FOREGROUND CHECK ===
+        // Ignore Firefox background events if user is currently using WhatsApp or Home Launcher
+        AccessibilityNodeInfo activeRoot = getRootInActiveWindow();
+        if (activeRoot != null) {
+            CharSequence activePkg = activeRoot.getPackageName();
+            activeRoot.recycle();
+            if (activePkg != null && !"org.mozilla.firefox".equals(activePkg.toString())) {
+                String pkgStr = activePkg.toString();
+                if (pkgStr.startsWith("com.whatsapp") || pkgStr.contains("launcher") || pkgStr.contains("home")) {
+                    Log.d(TAG, "Active window is " + pkgStr + ". Ignoring Firefox background event.");
+                    return;
+                }
+            }
         }
 
-        // === ONLY MONITOR KNOWN BROWSERS ===
-        if (!Constants.MONITORED_BROWSERS.containsKey(packageName)) {
-            if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
-                currentBrowserPackage = null;
-            }
+        if (!isBrowserBlockingEnabled()) {
             return;
         }
 
@@ -159,32 +187,16 @@ public class BrowserMonitorService extends AccessibilityService {
             }
         }
 
-        // === FOREGROUND CHECK ===
-        AccessibilityNodeInfo rootNode = getRootInActiveWindow();
-        if (rootNode != null) {
-            CharSequence fgPackage = rootNode.getPackageName();
-            rootNode.recycle();
-            Log.d(TAG, "Foreground package check: " + fgPackage);
-            if (fgPackage != null && "com.siteblocker.app".equals(fgPackage.toString())
-                    && !fgPackage.toString().equals(packageName)) {
-                Log.d(TAG, "Our app is in foreground, ignoring background event");
-                return;
-            }
-        }
-
         // Update current browser tracker
         if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             currentBrowserPackage = packageName;
         }
 
-        // Only process if we have a current browser
-        if (currentBrowserPackage == null) {
-            Log.d(TAG, "No current browser package tracked");
-            return;
-        }
+        // Always monitor Firefox
+        currentBrowserPackage = packageName;
 
-        // Try to extract URL from the browser
-        String url = extractUrlFromBrowser(packageName);
+        // Try fast extraction from event first, then fallback to node tree
+        String url = extractUrlFast(event, packageName);
         Log.d(TAG, "Extracted URL: " + url);
         if (url != null && !url.isEmpty()) {
             checkAndBlockUrl(url, packageName);
@@ -363,7 +375,7 @@ public class BrowserMonitorService extends AccessibilityService {
         // Step 1: Clear any text that was typed
         clearUrlBarText(packageName);
 
-        // Step 2: Press BACK to close the URL bar and stay in the browser
+        // Step 2: Press BACK to dismiss the search/URL overlay
         performGlobalAction(GLOBAL_ACTION_BACK);
     }
 
@@ -472,10 +484,16 @@ public class BrowserMonitorService extends AccessibilityService {
         if (rootNode == null) return null;
 
         try {
-            // Strategy 1: Try known URL bar view ID (including fallbacks for newer Firefox versions)
+            // Strategy 1: Try known URL bar view IDs for Firefox & monitored browsers
             String[] possibleIds = {
                 Constants.MONITORED_BROWSERS.get(packageName),
+                packageName + ":id/mozac_browser_toolbar_url_view",
+                packageName + ":id/url_bar_title",
+                packageName + ":id/mozac_browser_toolbar_edit_url_view",
                 packageName + ":id/ADDRESSBAR_URL_BOX",
+                packageName + ":id/url_view",
+                "mozac_browser_toolbar_url_view",
+                "url_bar_title",
                 "ADDRESSBAR_URL_BOX"
             };
 
@@ -639,11 +657,14 @@ public class BrowserMonitorService extends AccessibilityService {
             return;
         }
 
+        // Build merged whitelist: hardcoded + user-added from database
+        List<String> mergedAllowed = getMergedAllowedDomains();
+
         // 2. Extract domain if it looks like a URL
         String domain = DomainMatcher.extractDomain(url);
         if (domain != null && !domain.isEmpty()) {
-            // Check against whitelist
-            if (DomainMatcher.isAllowed(domain, allowedDomains)) {
+            // Check against merged whitelist
+            if (DomainMatcher.isAllowed(domain, mergedAllowed)) {
                 return; // Whitelisted domain is allowed
             }
             // Not whitelisted -> Block it!
@@ -662,7 +683,7 @@ public class BrowserMonitorService extends AccessibilityService {
         if (hasWeb) {
             // Webpage is loaded. Check if the page title matches any allowed domain.
             boolean isAllowedTitle = false;
-            for (String allowed : allowedDomains) {
+            for (String allowed : mergedAllowed) {
                 String mainPart = getMainDomainPart(allowed);
                 if (!mainPart.isEmpty() && cleanedUrl.contains(mainPart)) {
                     isAllowedTitle = true;
@@ -743,18 +764,98 @@ public class BrowserMonitorService extends AccessibilityService {
         // Increment blocked count
         incrementBlockedCount();
 
-        // Navigate back in the same tab instead of opening a new activity.
-        // This takes the user to the previous page (or Firefox home if no history).
-        try {
-            performGlobalAction(GLOBAL_ACTION_BACK);
-            Log.i(TAG, "Pressed Back to navigate away from blocked site: " + domain);
-        } catch (Exception e) {
-            Log.e(TAG, "Error performing back action", e);
-            performGlobalAction(GLOBAL_ACTION_HOME);
-        } finally {
-            // Reset blocking flag
+        // 1. Clear URL bar text
+        clearUrlBarText(browserPackage);
+
+        // 2. Press BACK (1st time) ONLY inside Firefox to abort page load instantly
+        safePerformBackInFirefox(browserPackage);
+
+        // 3. Press BACK (2nd time) ONLY inside Firefox after 40ms to close the tab and return to Home
+        mainHandler.postDelayed(() -> {
+            safePerformBackInFirefox(browserPackage);
             isBlocking.set(false);
+        }, 40);
+    }
+
+    /**
+     * Safely perform BACK action ONLY if Firefox is currently the active foreground window.
+     * Prevents BACK key events from ever leaking into WhatsApp or other apps.
+     */
+    private boolean safePerformBackInFirefox(String browserPackage) {
+        AccessibilityNodeInfo activeRoot = getRootInActiveWindow();
+        if (activeRoot != null) {
+            CharSequence pkg = activeRoot.getPackageName();
+            activeRoot.recycle();
+            if (pkg != null && browserPackage.equals(pkg.toString())) {
+                performGlobalAction(GLOBAL_ACTION_BACK);
+                Log.d(TAG, "Safe BACK executed in " + browserPackage);
+                return true;
+            } else {
+                Log.d(TAG, "Active window is " + pkg + ", NOT " + browserPackage + ". Suppressed BACK action.");
+            }
         }
+        return false;
+    }
+
+    /**
+     * Extract URL quickly from event text or source before traversing the full node tree.
+     */
+    private String extractUrlFast(AccessibilityEvent event, String packageName) {
+        if (event != null) {
+            List<CharSequence> textList = event.getText();
+            if (textList != null && !textList.isEmpty()) {
+                for (CharSequence cs : textList) {
+                    if (cs != null) {
+                        String s = cs.toString().trim();
+                        if (DomainMatcher.looksLikeUrl(s) && !DomainMatcher.isSearchQuery(s)) {
+                            return s;
+                        }
+                    }
+                }
+            }
+            CharSequence cd = event.getContentDescription();
+            if (cd != null) {
+                String s = cleanUrlFromContentDesc(cd.toString());
+                if (s != null && DomainMatcher.looksLikeUrl(s) && !DomainMatcher.isSearchQuery(s)) {
+                    return s;
+                }
+            }
+        }
+        return extractUrlFromBrowser(packageName);
+    }
+
+    /**
+     * Get merged whitelist: hardcoded Constants.ALLOWED_DOMAINS + user-added domains from database.
+     */
+    private List<String> getMergedAllowedDomains() {
+        List<String> merged = new ArrayList<>(allowedDomains);
+        List<String> dbDomains = cachedDbAllowedDomains;
+        if (dbDomains != null && !dbDomains.isEmpty()) {
+            for (String d : dbDomains) {
+                if (!merged.contains(d)) {
+                    merged.add(d);
+                }
+            }
+        }
+        return merged;
+    }
+
+    /**
+     * Refresh user-added allowed domains from Room database in background thread.
+     */
+    private void refreshDbAllowedDomains() {
+        new Thread(() -> {
+            try {
+                SiteRepository repo = SiteRepository.getInstance(getApplicationContext());
+                List<String> domains = repo.getActiveDomainsList();
+                if (domains != null) {
+                    cachedDbAllowedDomains = domains;
+                    Log.i(TAG, "Refreshed DB allowed domains: " + domains.size() + " entries");
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Error refreshing DB allowed domains", e);
+            }
+        }).start();
     }
 
     /**

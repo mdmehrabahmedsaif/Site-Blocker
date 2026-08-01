@@ -75,5 +75,7 @@ public final class Constants {
                                         "englishboli.com",
                                         "familylink.google.com",
                                         "families.google.com",
-                                        "myaccount.google.com"));
+                                        "myaccount.google.com",
+                                        "mail.google.com",
+                                        "keep.google.com"));
 }
